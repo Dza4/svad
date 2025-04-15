@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Владимир и Анна | Приглашение на свадьбу</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Montserrat:wght@300;400;500&display=swap');
+       
+        :root {
+            --beige: #F5F0E6;
+            --soft-pink: #E8C4C4;
+            --dusty-rose: #D8A7A7;
+            --taupe: #B3A18F;
+            --soft-brown: #A68A6F;
+            --dark-beige: #D9C7B8;
+        }
+       
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--beige);
+            color: #5a4a42;
+            line-height: 1.6;
+        }
+       
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+       
+        header {
+            text-align: center;
+            padding: 60px 0 40px;
+            background: linear-gradient(135deg, var(--soft-pink) 0%, var(--dark-beige) 100%);
+            margin-bottom: 40px;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+       
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+       
+        h1 {
+            font-size: 3.5rem;
+            margin: 20px 0;
+            color: #5a4a42;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+       
+        h2 {
+            font-size: 2.2rem;
+            color: var(--soft-brown);
+            margin-top: 40px;
+            border-bottom: 1px solid var(--dusty-rose);
+            padding-bottom: 10px;
+        }
+       
+        .couple-names {
+            font-size: 2.8rem;
+            letter-spacing: 2px;
+            margin: 30px 0;
+            color: #5a4a42;
+        }
+       
+        .date-place {
+            background-color: rgba(255,255,255,0.7);
+            display: inline-block;
+            padding: 20px 40px;
+            border-radius: 50px;
+            margin: 20px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+       
+        .invitation-text {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+       
+        .section {
+            margin-bottom: 60px;
+            padding: 0 20px;
+        }
+       
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+       
+        .detail-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+       
+        .detail-card:hover {
+            transform: translateY(-5px);
+        }
+       
+        .detail-card h3 {
+            color: var(--taupe);
+            margin-top: 0;
+        }
+       
+        .rsvp-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+       
+        .form-group {
+            margin-bottom: 20px;
+        }
+       
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--soft-brown);
+        }
+       
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--dark-beige);
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+       
+        button {
+            background-color: var(--dusty-rose);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            display: block;
+            margin: 30px auto 0;
+        }
+       
+        button:hover {
+            background-color: var(--soft-brown);
+        }
+       
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+       
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+       
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+       
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            background-color: var(--taupe);
+            color: white;
+            margin-top: 60px;
+        }
+       
+        .countdown {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            color: var(--soft-brown);
+        }
+       
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+           
+            .couple-names {
+                font-size: 2rem;
+            }
+           
+            .section {
+                padding: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Мы женимся!</h1>
+            <div class="couple-names">Владимир & Анна</div>
+            <div class="date-place">
+                <h2>15 августа 2024</h2>
+                <p>Усадьба "Белая сирень", Москва</p>
+            </div>
+            <div class="countdown" id="countdown"></div>
+        </div>
+    </header>
+   
+    <div class="container">
+        <section class="section">
+            <p class="invitation-text">
+                Дорогие друзья и родные!<br>
+                С огромной радостью приглашаем вас разделить с нами самый важный день в нашей жизни -
+                день нашей свадьбы. Ваше присутствие сделает этот праздник по-настоящему особенным и
+                наполненным любовью.
+            </p>
+        </section>
+       
+        <section class="section">
+            <h2>Программа дня</h2>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <h3>Церемония</h3>
+                    <p><strong>16:00</strong></p>
+                    <p>Торжественная церемония бракосочетания в белом зале усадьбы "Белая сирень".</p>
+                </div>
+                <div class="detail-card">
+                    <h3>Фуршет</h3>
+                    <p><strong>17:00</strong></p>
+                    <p>Легкие закуски и напитки в летнем саду усадьбы.</p>
+                </div>
+                <div class="detail-card">
+                    <h3>Банкет</h3>
+                    <p><strong>19:00</strong></p>
+                    <p>Торжественный ужин, танцы и развлечения в главном зале.</p>
+                </div>
+            </div>
+        </section>
+       
+        <section class="section">
+            <h2>Место проведения</h2>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <h3>Усадьба "Белая сирень"</h3>
+                    <p>Москва, ул. Садовая, 45</p>
+                    <p>Историческая усадьба с прекрасным садом и изысканными интерьерами в классическом стиле.</p>
+                </div>
+                <div class="detail-card">
+                    <h3>Как добраться</h3>
+                    <p><strong>На метро:</strong> станция "Парк культуры", 10 минут пешком</p>
+                    <p><strong>На машине:</strong> парковка на территории усадьбы</p>
+                </div>
+            </div>
+        </section>
+       
+        <section class="section">
+            <h2>Наши моменты</h2>
+            <div class="gallery">
+                <!-- Здесь должны быть фотографии пары -->
+                <img src="https://via.placeholder.com/300x200/F5F0E6/D8A7A7?text=Владимир+и+Анна" alt="Владимир и Анна">
+                <img src="https://via.placeholder.com/300x200/E8C4C4/B3A18F?text=Вместе" alt="Вместе">
+                <img src="https://via.placeholder.com/300x200/D9C7B8/A68A6F?text=Любовь" alt="Любовь">
+                <img src="https://via.placeholder.com/300x200/D8A7A7/5a4a42?text=Счастье" alt="Счастье">
+            </div>
+        </section>
+       
+        <section class="section">
+            <h2>Пожелания</h2>
+            <div class="detail-card">
+                <p>Ваше присутствие - самый ценный подарок для нас! Если вы хотите сделать нам подарок, мы будем рады вкладу в наше будущее.</p>
+                <p>Реквизиты для перевода: <br>
+                Сбербанк: 4276 **** **** 1234 <br>
+                Тинькофф: 5536 **** **** 5678</p>
+            </div>
+        </section>
+       
+        <section class="section">
+            <h2>Подтвердите присутствие</h2>
+            <div class="rsvp-form">
+                <form id="rsvpForm">
+                    <div class="form-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Количество гостей</label>
+                        <select id="guests" name="guests">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Ваши пожелания</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    <button type="submit">Подтвердить</button>
+                </form>
+            </div>
+        </section>
+    </div>
+   
+    <footer>
+        <p>С любовью, Владимир и Анна</p>
+        <p>По всем вопросам: +7 (123) 456-78-90 | wedding.vladimir.anna@example.com</p>
+    </footer>
+   
+    <script>
+        // Обратный отсчет до свадьбы
+        function updateCountdown() {
+            const weddingDate = new Date('2024-08-15T16:00:00');
+            const now = new Date();
+            const diff = weddingDate - now;
+           
+            if (diff <= 0) {
+                document.getElementById('countdown').innerHTML = "Свадьба сегодня!";
+                return;
+            }
+           
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+           
+            document.getElementById('countdown').innerHTML = `До свадьбы осталось: ${days} дней ${hours} часов ${minutes} минут`;
+        }
+       
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+       
+        // Обработка формы RSVP
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Спасибо за подтверждение! Мы рады, что вы сможете разделить с нами этот день.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
